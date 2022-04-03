@@ -1,0 +1,7 @@
+# https://prometheus.io/docs/prometheus/latest/configuration/configuration/#file_sd_config
+- targets:
+  - node1:9100
+  - node2:9100
+  - node3:9100
+  labels:
+    region: us-west-1
