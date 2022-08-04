@@ -46,3 +46,19 @@ scrape_configs:
     - refresh_interval: 1m
       files:
       - "/etc/prometheus/file_sd_config/*.yml"
+
+  # https_exporter
+  - job_name: https_exporter
+    scrape_interval: 30s
+    basic_auth:
+      username: node_exporter username
+      password: node_exporter password
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+    http_sd_configs:
+      - url: "https://example.com/api/node"
+        refresh_interval: 60s
+
+
+
